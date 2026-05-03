@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>حراج الشعب اليمني | للفخامة عنوان</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #c62828;
+            --dark-red: #8b0000;
+            --bright-red: #ff0000;
+            --gold: #d4af37;
+            --gold-light: #f0d878;
+            --light-gray: #f5f5f7;
+            --white: #ffffff;
+            --text-dark: #1a1a2e;
+            --text-gray: #6b7280;
+            --border: #e5e7eb;
+            --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.06);
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.12);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --header-height: 80px;
+            --nav-height: 68px;
+            --slider-height: 220px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: var(--light-gray);
+            color: var(--text-dark);
+            padding-top: var(--header-height);
+            padding-bottom: calc(var(--nav-height) + 14px);
+            overflow-x: hidden;
+            -webkit-overflow-scrolling: touch;
+            min-height: 100vh;
+        }
+
+        /* ========== هيدر أحمر ========== */
+        .main-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: linear-gradient(135deg, #8b0000 0%, #ff0000 50%, #8b0000 100%);
+            padding: 0 14px;
+            height: var(--header-height);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 4px 30px rgba(180, 0, 0, 0.5);
+            border-bottom: 2px solid rgba(212, 175, 55, 0.5);
+            transition: all var(--transition);
+        }
+        .main-header::before {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+            border-radius: 50%;
+            filter: blur(4px);
+            animation: headerGlow 3s ease-in-out infinite;
+        }
+        @keyframes headerGlow {
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+        .header-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+        .header-logo-icon {
+            width: 46px;
+            height: 46px;
+            background: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 26px;
+            font-weight: 900;
+            color: #1a0000;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 0 5px rgba(255, 255, 255, 0.15);
+            animation: logoGlow 3s ease-in-out infinite;
+        }
+        @keyframes logoGlow {
+            0%,
+            100% {
+                box-shadow: 0 0 20px rgba(255, 255, 255, 0.4), 0 0 0 5px rgba(255, 255, 255, 0.15);
+            }
+            50% {
+                box-shadow: 0 0 35px rgba(255, 255, 255, 0.7), 0 0 0 12px rgba(255, 255, 255, 0.05);
+            }
+        }
+        .header-title-group {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.2;
+        }
+        .header-title {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+            white-space: nowrap;
+            text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+        .header-subtitle {
+            font-size: 10px;
+            color: var(--gold-light);
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+        .header-actions {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            flex-shrink: 0;
+        }
+        .header-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            font-size: 17px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+            position: relative;
+        }
+        .header-btn:active {
+            background: rgba(255, 255, 255, 0.32);
+            transform: scale(0.9);
+        }
+        .header-btn .badge-dot {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            width: 9px;
+            height: 9px;
+            background: #ff3b3b;
+            border-radius: 50%;
+            border: 2px solid #8b0000;
+            animation: badgePulse 2s infinite;
+        }
+        @keyframes badgePulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.5);
+            }
+        }
+        .back-btn {
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 24px;
+            width: 40px;
+            height: 40px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            margin-left: 8px;
+            flex-shrink: 0;
+        }
+        .subpage-header .back-btn {
+            display: flex;
+        }
+        .subpage-header .header-brand {
+            display: none;
+        }
+        .subpage-header .header-actions {
+            display: none;
+        }
+
+        /* ========== الصفحات ========== */
+        .page-section {
+            display: none;
+            animation: fadeSlideIn 0.35s ease;
+        }
+        .page-section.active {
+            display: block;
+        }
+        @keyframes fadeSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* ========== السلايدر ========== */
+        .slider-wrapper {
+            padding: 12px 14px 0;
+        }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            height: var(--slider-height);
+            overflow: hidden;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-lg);
+            cursor: grab;
+            background: #1a1a2e;
+            direction: ltr;
+            touch-action: pan-x;
+            min-height: 180px;
+        }
+        .slides-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+            direction: ltr;
+        }
+        .slides-track.no-transition {
+            transition: none;
+        }
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .slide-bg {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            background: #1a1a2e;
+        }
+        .slide-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.88) 0%, rgba(0, 0, 0, 0.35) 40%, transparent 100%);
+            pointer-events: none;
+        }
+        .slide-content {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            right: 20px;
+            color: #fff;
+            pointer-events: none;
+            z-index: 2;
+            direction: rtl;
+            text-align: right;
+        }
+        .slide-content .slide-tag {
+            display: inline-block;
+            background: var(--gold);
+            color: #000;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .slide-content h3 {
+            font-size: 19px;
+            font-weight: 800;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+            margin: 0;
+            line-height: 1.3;
+        }
+        .slide-content p {
+            font-size: 11px;
+            opacity: 0.9;
+            margin-top: 4px;
+        }
+        .slider-dots {
+            position: absolute;
+            bottom: 14px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 7px;
+            z-index: 5;
+            direction: ltr;
+        }
+        .slider-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.45);
+            transition: all 0.35s;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .slider-dot.active {
+            background: var(--gold);
+            width: 26px;
+            border-radius: 10px;
+            border-color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* ========== البحث السريع ========== */
+        .search-section {
+            background: var(--white);
+            margin: 14px;
+            padding: 16px 14px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+        }
+        .filter-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        .filter-grid select {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-family: 'Cairo', sans-serif;
+            background: #fafafa;
+            color: var(--text-dark);
+            transition: all var(--transition);
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='3'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: left 12px center;
+            padding-left: 32px;
+        }
+        .btn-search {
+            grid-column: span 2;
+            background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+            color: #fff;
+            border: none;
+            padding: 14px;
+            border-radius: var(--radius-sm);
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            box-shadow: 0 4px 15px rgba(198, 40, 40, 0.3);
+            transition: all var(--transition);
+        }
+        .btn-search:active {
+            transform: scale(0.96);
+        }
+
+        /* ========== قسم الأقسام ========== */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 14px;
+            margin-top: 4px;
+        }
+        .section-header h2 {
+            font-size: 17px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-header h2::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: var(--primary-red);
+            border-radius: 2px;
+            flex-shrink: 0;
+        }
+        .section-header .see-all {
+            color: var(--primary-red);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+        .horizontal-scroll {
+            display: flex;
+            overflow-x: auto;
+            padding: 6px 14px 14px;
+            gap: 14px;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+        }
+        .horizontal-scroll::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* ========== بطاقة مزاد ========== */
+        .auction-card {
+            min-width: 250px;
+            max-width: 250px;
+            background: var(--white);
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+            scroll-snap-align: start;
+            flex-shrink: 0;
+            cursor: pointer;
+            position: relative;
+        }
+        .auction-card:active {
+            transform: scale(0.97);
+        }
+        .auction-card .card-img {
+            height: 130px;
+            background: #e8e8ec;
+            position: relative;
+            overflow: hidden;
+        }
+        .auction-card .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .auction-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--gold);
+            color: #000;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            z-index: 3;
+        }
+        .auction-badge.live {
+            animation: badgeBlink 1.5s infinite;
+            background: #ff3b3b;
+            color: #fff;
+        }
+        @keyframes badgeBlink {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        .timer-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: #fef2f2;
+            color: #dc2626;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 10px;
+            font-weight: 600;
+        }
+        .price {
+            color: var(--primary-red);
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        /* ========== بطاقة سيارة السوق المفتوح ========== */
+        .car-card-open {
+            background: #fff;
+            border-radius: 12px;
+            margin: 8px 14px;
+            padding: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            transition: all var(--transition);
+            border: 1px solid #eee;
+            position: relative;
+        }
+        .car-card-open:active {
+            transform: scale(0.98);
+            box-shadow: var(--shadow);
+        }
+        .fav-btn-heart {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 10;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.85);
+            border: 1px solid #ddd;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition);
+        }
+        .fav-btn-heart.liked {
+            color: #ff1744;
+            border-color: #ff1744;
+            background: #fff0f0;
+            animation: heartPop 0.4s ease;
+        }
+        @keyframes heartPop {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.35);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        .car-card-header {
+            display: flex;
+            gap: 12px;
+        }
+        .car-image-container {
+            width: 110px;
+            height: 90px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #f0f0f3;
+            flex-shrink: 0;
+        }
+        .car-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .car-info-main {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .car-price-open {
+            color: #b71c1c;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+        .car-title-open {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #1a1a2e;
+        }
+        .car-specs-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            font-size: 0.72rem;
+            color: #666;
+            margin-top: 2px;
+        }
+        .car-specs-tags span {
+            background: #f5f5f7;
+            padding: 2px 8px;
+            border-radius: 10px;
+        }
+        .car-footer-actions {
+            display: flex;
+            gap: 8px;
+            margin-top: 10px;
+            border-top: 1px dashed #eee;
+            padding-top: 10px;
+        }
+        .btn-call-open {
+            flex: 2;
+            background: #007aff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 11px;
+            transition: all var(--transition);
+        }
+        .btn-call-open:active {
+            background: #005ecb;
+            transform: scale(0.95);
+        }
+        .btn-chat-open {
+            flex: 1;
+            background: #fff;
+            color: #25d366;
+            border: 1.5px solid #25d366;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 11px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all var(--transition);
+        }
+        .btn-chat-open:active {
+            background: #e8f8ef;
+            transform: scale(0.95);
+        }
+
+        /* ========== قائمة السيارات ========== */
+        .cars-list {
+            display: flex;
+            flex-direction: column;
+            padding: 4px 0;
+        }
+
+        /* ========== صفحات فرعية ========== */
+        .search-page-header {
+            background: var(--white);
+            padding: 16px 14px;
+            border-bottom: 1px solid var(--border);
+            box-shadow: var(--shadow-sm);
+        }
+        .search-input-large {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e5e7eb;
+            border-radius: var(--radius-sm);
+            font-size: 15px;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 10px;
+            background: #fafafa;
+        }
+        .filter-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 12px;
+        }
+        .filter-chip {
+            padding: 8px 16px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            background: #fff;
+            transition: all var(--transition);
+            font-family: 'Cairo', sans-serif;
+        }
+        .filter-chip.active {
+            background: var(--primary-red);
+            color: #fff;
+            border-color: var(--primary-red);
+        }
+
+        /* ========== صفحة تفاصيل المزاد ========== */
+        .auction-detail-header {
+            background: linear-gradient(135deg, #1a0000, #4a0000);
+            color: #fff;
+            padding: 16px;
+            text-align: center;
+        }
+        .auction-countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 12px 0;
+        }
+        .countdown-block {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 10px;
+            padding: 10px 8px;
+            min-width: 50px;
+            text-align: center;
+        }
+        .countdown-block .num {
+            font-size: 24px;
+            font-weight: 900;
+            display: block;
+        }
+        .countdown-block .lbl {
+            font-size: 9px;
+            opacity: 0.8;
+        }
+        .bid-section {
+            background: #fff;
+            padding: 16px;
+            margin: 8px 14px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+        }
+        .bid-input-row {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+        }
+        .bid-input-row input {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid var(--primary-red);
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'Cairo', sans-serif;
+        }
+        .btn-bid {
+            background: var(--primary-red);
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 14px;
+        }
+        .specs-grid {
+            background: #fff;
+            padding: 12px 16px;
+            margin: 8px 14px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-sm);
+        }
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f3;
+            font-size: 13px;
+        }
+        .spec-row span {
+            color: #888;
+        }
+        .spec-row strong {
+            color: #1a1a2e;
+            font-weight: 600;
+        }
+
+        /* ========== شريط التنقل ========== */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: #fff;
+            display: flex;
+            justify-content: space-around;
+            align-items: flex-end;
+            padding: 6px 8px 8px;
+            box-shadow: 0 -3px 20px rgba(0, 0, 0, 0.12);
+            z-index: 1000;
+            height: var(--nav-height);
+        }
+        .nav-item {
+            text-align: center;
+            color: #999;
+            font-size: 10px;
+            cursor: pointer;
+            flex: 1;
+            max-width: 70px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-weight: 500;
+            transition: all var(--transition);
+        }
+        .nav-item.active {
+            color: var(--primary-red);
+            font-weight: 700;
+        }
+        .add-btn {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 28px;
+            cursor: pointer;
+            border: 4px solid var(--light-gray);
+            box-shadow: 0 4px 20px rgba(198, 40, 40, 0.4);
+            position: absolute;
+            bottom: 6px;
+            transition: all var(--transition);
+        }
+        .add-btn:active {
+            transform: scale(0.88) rotate(45deg);
+        }
+
+        /* ========== صورة في الرسائل ========== */
+        .chat-list-item {
+            display: flex;
+            gap: 12px;
+            padding: 14px;
+            background: #fff;
+            margin: 6px 14px;
+            border-radius: var(--radius);
+            cursor: pointer;
+            align-items: center;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+        }
+        .chat-list-item:active {
+            background: #f9f9f9;
+            transform: scale(0.98);
+        }
+        .chat-thumb {
+            width: 55px;
+            height: 55px;
+            border-radius: 10px;
+            background: #f0f0f3;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        .chat-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .chat-info {
+            flex: 1;
+        }
+        .chat-info h4 {
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .chat-info p {
+            font-size: 11px;
+            color: #999;
+        }
+
+        /* ========== المفضلة فارغة ========== */
+        .favorites-empty {
+            text-align: center;
+            padding: 60px 20px;
+            color: #999;
+            font-size: 16px;
+        }
+
+        /* ========== زر العملة ========== */
+        .currency-selector {
+            display: flex;
+            gap: 6px;
+            padding: 8px 14px;
+            flex-wrap: wrap;
+        }
+        .currency-btn {
+            padding: 6px 14px;
+            border-radius: 20px;
+            border: 1.5px solid #e5e7eb;
+            background: #fff;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            font-size: 11px;
+            font-weight: 600;
+            transition: all var(--transition);
+        }
+        .currency-btn.active {
+            background: var(--primary-red);
+            color: #fff;
+            border-color: var(--primary-red);
+        }
+
+        /* ========== مودال ========== */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 2000;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity var(--transition);
+            backdrop-filter: blur(3px);
+        }
+        .modal-overlay.show {
+            opacity: 1;
+            pointer-events: auto;
+        }
+        .modal-sheet {
+            background: #fff;
+            width: 100%;
+            max-width: 500px;
+            max-height: 85vh;
+            overflow-y: auto;
+            border-radius: 20px 20px 0 0;
+            padding: 20px 14px 30px;
+            transform: translateY(100%);
+            transition: transform 0.35s cubic-bezier(0.32, 0.72, 0, 1);
+            box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.3);
+        }
+        .modal-overlay.show .modal-sheet {
+            transform: translateY(0);
+        }
+        .modal-handle {
+            width: 40px;
+            height: 4px;
+            background: #d1d5db;
+            border-radius: 2px;
+            margin: 0 auto 16px;
+        }
+        .form-group {
+            margin-bottom: 12px;
+        }
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 13px;
+            margin-bottom: 4px;
+            color: #333;
+        }
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1.5px solid #e5e7eb;
+            border-radius: 10px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 13px;
+            background: #fafafa;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            cursor: pointer;
+            font-family: 'Cairo', sans-serif;
+            margin-top: 10px;
+        }
+
+        /* ========== حسابي ========== */
+        .account-header {
+            background: linear-gradient(135deg, var(--dark-red), var(--primary-red));
+            padding: 30px 20px;
+            text-align: center;
+            color: #fff;
+            border-radius: 0 0 25px 25px;
+            margin-bottom: 10px;
+        }
+        .account-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+        .menu-item {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px 20px;
+            background: #fff;
+            margin: 6px 14px;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            box-shadow: var(--shadow-sm);
+            transition: all var(--transition);
+        }
+        .menu-item:active {
+            background: #f9f9f9;
+            transform: scale(0.98);
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --slider-height: 180px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- الهيدر الرئيسي -->
+    <header class="main-header" id="mainHeader">
+        <button class="back-btn" id="backBtn" onclick="goBack()">←</button>
+        <div class="header-brand" onclick="navigateTo('home')">
+            <div class="header-logo-icon">🚗</div>
+            <div class="header-title-group">
+                <span class="header-title">حراج الشعب اليمني</span>
+                <span class="header-subtitle">للفخامة عنوان ✦</span>
+            </div>
+        </div>
+        <div class="header-actions">
+            <button class="header-btn" onclick="navigateTo('search')">🔍</button>
+            <button class="header-btn" onclick="navigateTo('notifications')">
+                🔔 <span class="badge-dot" id="notifBadge" style="display:none;"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ==================== الصفحات ==================== -->
+
+    <!-- الرئيسية -->
+    <div class="page-section active" id="page-home">
+        <div class="slider-wrapper">
+            <div class="slider-container" id="sliderContainer">
+                <div class="slides-track" id="slidesTrack"></div>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+        <section class="search-section">
+            <div class="filter-grid">
+                <select id="quickBrand"><option value="">الماركة</option></select>
+                <select id="quickCity"><option value="">المدينة</option></select>
+                <button class="btn-search" onclick="applyQuickSearch()">🔍 ابحث</button>
+            </div>
+        </section>
+
+        <div class="section-header"><h2>🔥 المزادات المباشرة</h2><span class="see-all" onclick="navigateTo('auctions')">عرض الكل ←</span></div>
+        <div class="horizontal-scroll" id="liveAuctionsScroll"></div>
+
+        <div class="section-header"><h2>🆕 أحدث الإضافات</h2><span class="see-all" onclick="navigateTo('search')">عرض الكل ←</span></div>
+        <div class="cars-list" id="latestCarsContainer"></div>
+
+        <div class="section-header"><h2>⭐ سيارات مميزة</h2><span class="see-all" onclick="navigateTo('search')">عرض الكل ←</span></div>
+        <div class="cars-list" id="featuredCars"></div>
+    </div>
+
+    <!-- البحث -->
+    <div class="page-section" id="page-search">
+        <div class="search-page-header">
+            <h2>🔍 بحث متقدم</h2>
+            <input type="text" class="search-input-large" id="searchText" placeholder="اكتب اسم السيارة...">
+            <div class="filter-chips" id="filterChips">
+                <span class="filter-chip active" data-filter="all">الكل</span>
+                <span class="filter-chip" data-filter="new">جديد</span>
+                <span class="filter-chip" data-filter="used">مستعمل</span>
+                <span class="filter-chip" data-filter="auction">مزادات</span>
+            </div>
+            <div class="filter-grid" style="margin-top:14px;">
+                <select id="searchBrand"><option value="">الماركة</option></select>
+                <select id="searchCity"><option value="">المدينة</option></select>
+                <select id="searchYear"><option value="">السنة</option></select>
+                <select id="searchPrice"><option value="">السعر</option></select>
+                <button class="btn-search" style="grid-column:span 2;" onclick="applySearch()">🔍 بحث</button>
+            </div>
+        </div>
+        <div class="cars-list" id="searchResults" style="padding-top:8px;"></div>
+    </div>
+
+    <!-- المزادات -->
+    <div class="page-section" id="page-auctions">
+        <div style="padding:16px;background:#fff;border-bottom:1px solid #eee;"><h2>🔥 جميع المزادات</h2></div>
+        <div id="allAuctions"></div>
+    </div>
+
+    <!-- التنبيهات -->
+    <div class="page-section" id="page-notifications">
+        <div style="padding:16px;background:#fff;border-bottom:1px solid #eee;"><h2>🔔 الإشعارات</h2></div>
+        <div id="notificationsList"></div>
+    </div>
+
+    <!-- الحساب (المفضلة مدمجة هنا) -->
+    <div class="page-section" id="page-account">
+        <div id="accountContent"></div>
+        <div style="padding:8px 14px;margin-top:8px;">
+            <div class="section-header"><h2>❤️ سياراتي المفضلة</h2></div>
+            <div id="accountFavoritesList"></div>
+        </div>
+    </div>
+
+    <!-- الرسائل -->
+    <div class="page-section" id="page-messages">
+        <div style="padding:16px;background:#fff;border-bottom:1px solid #eee;"><h2>💬 رسائلي</h2></div>
+        <div id="myChatsList"></div>
+    </div>
+
+    <!-- تفاصيل المزاد (صفحة مستقلة) -->
+    <div class="page-section" id="page-details">
+        <div id="auctionDetailContent"></div>
+    </div>
+
+    <!-- صفحة الدردشة -->
+    <div class="page-section" id="page-chat">
+        <div style="padding:16px;background:#fff;display:flex;align-items:center;gap:10px;border-bottom:1px solid #eee;">
+            <h3 id="chatPageTitle">💬 محادثة</h3>
+        </div>
+        <div id="chatPageMessages" style="padding:10px;max-height:50vh;overflow-y:auto;background:#f9f9f9;margin:10px;border-radius:10px;"></div>
+        <div style="display:flex;gap:8px;padding:10px;">
+            <input type="text" id="chatPageInput" placeholder="اكتب رسالتك..." style="flex:1;padding:12px;border:1.5px solid #e5e7eb;border-radius:10px;font-family:'Cairo';">
+            <button onclick="sendChatPageMessage()" style="padding:12px 16px;background:var(--primary-red);color:#fff;border:none;border-radius:10px;cursor:pointer;">📤</button>
+        </div>
+    </div>
+
+    <!-- إضافة إعلان -->
+    <div class="page-section" id="page-add">
+        <div style="padding:16px;background:#fff;border-bottom:1px solid #eee;"><h2>📢 إضافة إعلان جديد</h2></div>
+        <div style="padding:16px;">
+            <div class="form-group"><label>ماركة السيارة *</label><select id="adBrand"><option value="">اختر الماركة</option></select></div>
+            <div class="form-group"><label>نوع السيارة *</label><input type="text" id="adModel" placeholder="مثلاً: كامري"></div>
+            <div class="form-group"><label>الموديل *</label><input type="text" id="adTrim" placeholder="مثلاً: GLX"></div>
+            <div class="form-group"><label>سنة الصنع *</label><input type="number" id="adYear" min="1990" max="2026"></div>
+            <div class="form-group"><label>اللون *</label><input type="text" id="adColor" placeholder="أبيض لؤلؤي"></div>
+            <div class="form-group"><label>المدينة *</label><select id="adCity"><option value="">اختر المدينة</option></select></div>
+            <div class="form-group"><label>السعر</label><input type="number" id="adPrice" placeholder="السعر بالدولار"></div>
+            <div class="form-group"><label>الصور (حتى 7 صور)</label><input type="file" id="adFiles" accept="image/*" multiple style="padding:10px;border:1.5px dashed #e5e7eb;border-radius:10px;width:100%;font-family:'Cairo';" onchange="checkFileCount(this)"></div>
+            <div class="form-group"><label>العملة الافتراضية</label><select id="adCurrency"><option value="USD">دولار $</option><option value="YER">ريال يمني ﷼</option><option value="SAR">ريال سعودي ر.س</option></select></div>
+            <div class="form-group"><label>ناقل الحركة</label><select id="adTransmission"><option value="اوتوماتيك">اوتوماتيك</option><option value="عادي">عادي</option></select></div>
+            <div class="form-group"><label>الوصف</label><textarea id="adDescription" rows="3" style="width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:10px;font-family:'Cairo';resize:vertical;" placeholder="وصف مختصر..."></textarea></div>
+            <div class="form-group"><label>نوع الإعلان</label><select id="adCondition"><option value="used">مستعمل</option><option value="new">جديد</option></select></div>
+            <div class="form-group"><label>مزاد؟</label><select id="adIsAuction"><option value="false">لا</option><option value="true">نعم</option></select></div>
+            <button class="btn-submit" onclick="submitAd()">📤 إرسال الإعلان</button>
+        </div>
+    </div>
+
+    <!-- مودال المصادقة -->
+    <div class="modal-overlay" id="authModal">
+        <div class="modal-sheet">
+            <div class="modal-handle"></div>
+            <h3 id="authTitle" style="text-align:center;font-weight:700;margin-bottom:14px;">🔐 تسجيل الدخول</h3>
+            <div id="authForm">
+                <div class="form-group"><label>الاسم الكامل</label><input type="text" id="authName" placeholder="أدخل اسمك"></div>
+                <div class="form-group"><label>رقم الهاتف * (يمني 9 أرقام)</label><input type="tel" id="authPhone" placeholder="مثلاً: 780173896" maxlength="9"></div>
+                <div class="form-group"><label>البريد الإلكتروني</label><input type="email" id="authEmail" placeholder="اختياري"></div>
+                <div class="form-group"><label>كلمة المرور *</label><input type="password" id="authPassword" placeholder="أدخل كلمة مرور"></div>
+                <button class="btn-submit" onclick="handleAuth()">✅ دخول / تسجيل</button>
+            </div>
+            <div id="authLoggedIn" style="display:none;text-align:center;">
+                <p style="font-size:40px;">✅</p><p><strong>مرحباً بك!</strong></p><p id="authUserName"></p>
+                <button class="btn-submit" onclick="logout()" style="background:#999;">🚪 تسجيل الخروج</button>
+            </div>
+            <button style="width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:10px;background:#fff;font-weight:600;cursor:pointer;font-family:'Cairo';margin-top:8px;" onclick="closeAuthModal()">إغلاق</button>
+        </div>
+    </div>
+
+    <!-- شريط التنقل السفلي -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" data-page="home" onclick="navigateTo('home')"><span>🏠</span><span>الرئيسية</span></div>
+        <div class="nav-item" data-page="search" onclick="navigateTo('search')"><span>🔍</span><span>بحث</span></div>
+        <div style="position:relative;flex:1;display:flex;justify-content:center;max-width:70px;"><div class="add-btn" onclick="navigateTo('add')">+</div></div>
+        <div class="nav-item" data-page="messages" onclick="navigateTo('messages')"><span>💬</span><span>رسائل</span></div>
+        <div class="nav-item" data-page="account" onclick="navigateTo('account')"><span>👤</span><span>حسابي</span></div>
+    </nav>
+
+    <script>
+        // ==================== البيانات ====================
+        const brands = ['تويوتا', 'لكزس', 'مرسيدس', 'بي إم دبليو', 'هيونداي', 'نيسان', 'كيا', 'شيفروليه', 'فورد', 'ميتسوبيشي'];
+        const cities = ['صنعاء', 'عدن', 'تعز', 'الحديدة', 'إب', 'المكلا', 'سيئون', 'ذمار', 'عمران', 'البيضاء'];
+        const years = ['2026', '2025', '2024', '2023', '2022', '2021', '2020', '2019', '2018'];
+        const yemeniPhonePrefixes = ['77', '78', '73', '71', '70'];
+
+        // أسعار الصرف التقريبية
+        const exchangeRates = { USD: 1, YER: 530, SAR: 3.75 };
+        let currentCurrency = localStorage.getItem('haraj_currency') || 'USD';
+
+        const sliderImages = [
+            'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80',
+            'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80',
+            'https://images.unsplash.com/photo-1555215695-3004980ad54e?w=800&q=80',
+            'https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?w=800&q=80'
+        ];
+        const sliderTags = ['🔥 مزاد الأسبوع', '💰 بيع فوري', '🆕 وصل حديثاً', '⭐ ضمان ذهبي'];
+        const sliderTitles = ['أقوى المزادات على السيارات الفاخرة', 'بع سيارتك بأعلى سعر', 'موديلات 2026 بأسعار تنافسية', 'ثقة وأمان في كل صفقة'];
+        const sliderSubtitles = ['لكزس · مرسيدس · بي إم دبليو', 'مجاناً · بدون عمولة', 'تصفح أحدث العروض', 'فحص شامل · ضمان استرداد'];
+
+        let cars = JSON.parse(localStorage.getItem('haraj_cars_v3')) || [
+            { id: 1, brand: 'هيونداي', model: 'سوناتا', year: '2024', trim: 'GLX', color: 'أبيض', city: 'صنعاء',
+                price: 24500, images: ['https://images.unsplash.com/photo-1599689018338-1d2e2e9e9e0e?w=400&q=60'],
+                featured: true, condition: 'new', isAuction: false, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'سيارة جديدة بالكامل، ضمان 5 سنوات.' },
+            { id: 2, brand: 'نيسان', model: 'باترول', year: '2023', trim: 'SE Titanium', color: 'أسود', city: 'عدن',
+                price: 52000, images: ['https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=400&q=60'],
+                featured: true, condition: 'used', isAuction: true, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'باترول نظيف جداً، ماشي 80 ألف كم.' },
+            { id: 3, brand: 'تويوتا', model: 'هايلوكس', year: '2025', trim: 'دبل كابينة', color: 'رمادي', city: 'تعز',
+                price: 38800, images: ['https://images.unsplash.com/photo-1626072778346-0e7c0b7b7b7b?w=400&q=60'],
+                featured: false, condition: 'new', isAuction: false, transmission: 'عادي', currency: 'USD',
+                description: 'هايلوكس دبل كابينة موديل السنة.' },
+            { id: 4, brand: 'لكزس', model: 'ES350', year: '2024', trim: 'فل أوبشن', color: 'فضي', city: 'الحديدة',
+                price: 64000, images: ['https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=400&q=60'],
+                featured: false, condition: 'used', isAuction: true, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'لكزس ES350 فل أوبشن، فتحة سقف.' },
+            { id: 5, brand: 'مرسيدس', model: 'S500', year: '2024', trim: 'مايباخ', color: 'أسود', city: 'صنعاء',
+                price: 145000, images: ['https://images.unsplash.com/photo-1563720223185-1103d5164c5b?w=400&q=60'],
+                featured: true, condition: 'new', isAuction: true, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'مرسيدس S500 مايباخ، أفخم سيارة.' },
+            { id: 6, brand: 'بي إم دبليو', model: 'X7', year: '2025', trim: 'M Sport', color: 'أزرق', city: 'المكلا',
+                price: 98000, images: ['https://images.unsplash.com/photo-1556800572-1b6f0b7b0b0b?w=400&q=60'],
+                featured: false, condition: 'new', isAuction: false, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'BMW X7 M Sport 2025.' },
+            { id: 7, brand: 'تويوتا', model: 'لاندكروزر', year: '2025', trim: 'GXR', color: 'أبيض', city: 'إب',
+                price: 82000, images: ['https://images.unsplash.com/photo-1596641608616-4f6b1a0b0b0b?w=400&q=60'],
+                featured: false, condition: 'new', isAuction: false, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'لاندكروزر 2025 GXR.' },
+            { id: 8, brand: 'لكزس', model: 'LX600', year: '2025', trim: 'فل كامل', color: 'ذهبي', city: 'ذمار',
+                price: 110000, images: ['https://images.unsplash.com/photo-1606016159991-dfe4f2746ea5?w=400&q=60'],
+                featured: true, condition: 'new', isAuction: true, transmission: 'اوتوماتيك', currency: 'USD',
+                description: 'لكزس LX600 فل كامل.' }
+        ];
+
+        let currentUser = JSON.parse(localStorage.getItem('haraj_user')) || null;
+        let notifications = JSON.parse(localStorage.getItem('haraj_notifications')) || [
+            { id: 1, title: 'عرض جديد على سيارتك!', body: 'تلقيت عرضاً بقيمة 52,000$', time: 'منذ 5 دقائق', unread: true,
+                icon: '💰' },
+            { id: 2, title: 'انتهاء مزاد قريباً', body: 'مزاد لكزس LX600 ينتهي خلال ساعتين', time: 'منذ 30 دقيقة', unread: true,
+                icon: '🔔' },
+        ];
+        let favorites = JSON.parse(localStorage.getItem('haraj_favorites')) || [];
+        let chatRooms = JSON.parse(localStorage.getItem('haraj_chatRooms')) || {};
+        let currentChatRoomId = null;
+        let previousPage = 'home';
+        // لتخزين مؤقتات المزادات (تحاكي الواقع)
+        let auctionTimers = JSON.parse(localStorage.getItem('haraj_auctionTimers')) || {};
+
+        function saveData() {
+            localStorage.setItem('haraj_cars_v3', JSON.stringify(cars));
+            localStorage.setItem('haraj_notifications', JSON.stringify(notifications));
+            localStorage.setItem('haraj_chatRooms', JSON.stringify(chatRooms));
+            localStorage.setItem('haraj_favorites', JSON.stringify(favorites));
+            localStorage.setItem('haraj_currency', currentCurrency);
+            localStorage.setItem('haraj_auctionTimers', JSON.stringify(auctionTimers));
+            if (currentUser) localStorage.setItem('haraj_user', JSON.stringify(currentUser));
+        }
+
+        function validateYemeniPhone(phone) {
+            const cleaned = phone.replace(/\D/g, '');
+            if (cleaned.length !== 9) return false;
+            return yemeniPhonePrefixes.includes(cleaned.substring(0, 2));
+        }
+
+        // ==================== تحويل العملات ====================
+        function convertPrice(priceUSD, targetCurrency) {
+            const rate = exchangeRates[targetCurrency] || 1;
+            return Math.round(priceUSD * rate);
+        }
+
+        function formatPrice(priceUSD, currency) {
+            const converted = convertPrice(priceUSD, currency);
+            switch (currency) {
+                case 'YER':
+                    return converted.toLocaleString() + ' ﷼';
+                case 'SAR':
+                    return converted.toLocaleString() + ' ر.س';
+                default:
+                    return converted.toLocaleString() + ' $';
+            }
+        }
+
+        function getCurrencySymbol(currency) {
+            switch (currency) { case 'YER':
+                    return '﷼';
+                case 'SAR':
+                    return 'ر.س';
+                default:
+                    return '$'; }
+        }
+
+        // ==================== ملء القوائم المنسدلة ====================
+        function populateSelects() {
+            const brandSelects = document.querySelectorAll('#quickBrand, #searchBrand, #adBrand');
+            brandSelects.forEach(s => { s.innerHTML = '<option value="">اختر الماركة</option>' + brands.map(b =>
+                    `<option value="${b}">${b}</option>`).join(''); });
+            const citySelects = document.querySelectorAll('#quickCity, #searchCity, #adCity');
+            citySelects.forEach(s => { s.innerHTML = '<option value="">اختر المدينة</option>' + cities.map(c =>
+                    `<option value="${c}">${c}</option>`).join(''); });
+            const yearSelect = document.getElementById('searchYear');
+            if (yearSelect) yearSelect.innerHTML = '<option value="">السنة</option>' + years.map(y =>
+                `<option value="${y}">${y}</option>`).join('');
+            const priceSelect = document.getElementById('searchPrice');
+            if (priceSelect) priceSelect.innerHTML =
+                '<option value="">نطاق السعر</option><option value="0-30000">أقل من 30,000$</option><option value="30000-60000">30,000$ - 60,000$</option><option value="60000-100000">60,000$ - 100,000$</option><option value="100000-">أكثر من 100,000$</option>';
+        }
+
+        // ==================== السلايدر ====================
+        let totalSlides, currentSlide = 0,
+            currentLoopIndex = 1,
+            isSliding = false,
+            autoSlideInterval;
+
+        function buildSlider() {
+            const track = document.getElementById('slidesTrack');
+            const dotsContainer = document.getElementById('sliderDots');
+            const total = sliderImages.length;
+            const loopSlides = [
+                { img: sliderImages[total - 1], tag: sliderTags[total - 1], title: sliderTitles[total - 1],
+                    sub: sliderSubtitles[total - 1] },
+                ...sliderImages.map((img, i) => ({ img, tag: sliderTags[i], title: sliderTitles[i],
+                sub: sliderSubtitles[i] })),
+                { img: sliderImages[0], tag: sliderTags[0], title: sliderTitles[0], sub: sliderSubtitles[0] },
+            ];
+            track.innerHTML = loopSlides.map((s, i) => `
+            <div class="slide" data-loop-index="${i}">
+              <img class="slide-bg" src="${s.img}" alt="سيارة" loading="lazy" onerror="this.style.background='linear-gradient(135deg,#1a0000,#5c0000)';">
+              <div class="slide-overlay"></div>
+              <div class="slide-content">
+                <span class="slide-tag">${s.tag}</span>
+                <h3>${s.title}</h3>
+                <p>${s.sub}</p>
+              </div>
+            </div>`).join('');
+            dotsContainer.innerHTML = sliderImages.map((_, i) =>
+                `<span class="slider-dot${i===0?' active':''}" data-index="${i}"></span>`).join('');
+            totalSlides = total;
+            currentSlide = 0;
+            currentLoopIndex = 1;
+            updateSliderPosition(true);
+            document.querySelectorAll('#sliderDots .slider-dot').forEach(dot => {
+                dot.addEventListener('click', function() {
+                    const realIndex = parseInt(this.getAttribute('data-index'));
+                    goToSlide(realIndex);
+                    resetAutoSlide();
+                });
+            });
+        }
+
+        function updateSliderPosition(instant = false) {
+            const track = document.getElementById('slidesTrack');
+            if (instant) track.classList.add('no-transition');
+            else track.classList.remove('no-transition');
+            track.style.transform = `translateX(-${currentLoopIndex * 100}%)`;
+            if (instant) requestAnimationFrame(() => requestAnimationFrame(() => track.classList.remove(
+                'no-transition')));
+            document.querySelectorAll('#sliderDots .slider-dot').forEach((d, i) => d.classList.toggle('active', i ===
+                currentSlide));
+        }
+
+        function goToSlide(index) { currentSlide = index;
+            currentLoopIndex = index + 1;
+            updateSliderPosition(); }
+
+        function nextSlide() { if (isSliding) return;
+            isSliding = true;
+            currentLoopIndex++;
+            updateSliderPosition();
+            handleLoopEnd();
+            setTimeout(() => isSliding = false, 500); }
+
+        function prevSlide() { if (isSliding) return;
+            isSliding = true;
+            currentLoopIndex--;
+            updateSliderPosition();
+            handleLoopEnd();
+            setTimeout(() => isSliding = false, 500); }
+
+        function handleLoopEnd() {
+            if (currentLoopIndex === 0) {
+                setTimeout(() => { currentLoopIndex = totalSlides;
+                    currentSlide = totalSlides - 1;
+                    updateSliderPosition(true); }, 450);
+            } else if (currentLoopIndex === totalSlides + 1) {
+                setTimeout(() => { currentLoopIndex = 1;
+                    currentSlide = 0;
+                    updateSliderPosition(true); }, 450);
+            } else currentSlide = currentLoopIndex - 1;
+        }
+
+        function startAutoSlide() { stopAutoSlide();
+            autoSlideInterval = setInterval(nextSlide, 4500); }
+
+        function stopAutoSlide() { clearInterval(autoSlideInterval);
+            autoSlideInterval = null; }
+
+        function resetAutoSlide() { stopAutoSlide();
+            startAutoSlide(); }
+
+        // ==================== عرض البطاقات ====================
+        function getCarFirstImage(car) {
+            if (car.images && car.images.length > 0) return car.images[0];
+            if (car.image) return car.image;
+            return 'data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2240%22%3E🚗%3C/text%3E%3C/svg%3E';
+        }
+
+        function renderCarCard(car) {
+            const imgSrc = getCarFirstImage(car);
+            const isLiked = favorites.includes(car.id);
+            const priceDisplay = formatPrice(car.price, currentCurrency);
+            return `
+            <div class="car-card-open" onclick="showAuctionDetail(${car.id})">
+              <button class="fav-btn-heart${isLiked?' liked':''}" onclick="event.stopPropagation();toggleFavorite(${car.id})">${isLiked?'❤️':'🤍'}</button>
+              <div class="car-card-header">
+                <div class="car-image-container"><img src="${imgSrc}" alt="${car.brand}" onerror="this.onerror=null;this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22100%22 height=%22100%22%3E%3Ctext x=%2250%25%22 y=%2250%25%22 text-anchor=%22middle%22 dy=%22.3em%22 font-size=%2240%22%3E🚗%3C/text%3E%3C/svg%3E';"></div>
+                <div class="car-info-main">
+                  <div class="car-price-open">${priceDisplay}</div>
+                  <div class="car-title-open">${car.brand} ${car.model} ${car.year}</div>
+                  <div class="car-specs-tags">
+                    <span>${car.trim}</span><span>${car.color}</span><span>📍${car.city}</span>
+                  </div>
+                </div>
+              </div>
+              <div class="car-footer-actions">
+                <button class="btn-call-open" onclick="event.stopPropagation();openWhatsApp('${car.brand} ${car.model} ${car.year}')">📞 اتصال</button>
+                <button class="btn-chat-open" onclick="event.stopPropagation();openCarChat(${car.id},'${car.brand} ${car.model}')">💬 دردشة</button>
+              </div>
+            </div>`;
+        }
+
+        function renderAuctionsScroll() {
+            const container = document.getElementById('liveAuctionsScroll');
+            const auctionCars = cars.filter(c => c.isAuction).slice(0, 6);
+            container.innerHTML = auctionCars.map(car => {
+                const imgSrc = getCarFirstImage(car);
+                const remaining = getAuctionRemaining(car.id);
+                return `
+            <div class="auction-card" onclick="showAuctionDetail(${car.id})">
+                <div class="card-img"><img src="${imgSrc}" onerror="this.style.display='none';this.parentElement.innerHTML='🚙';"></div>
+                <div style="padding:10px;">
+                    <span class="auction-badge live">مزاد مباشر</span>
+                    <h4 style="margin:4px 0;">${car.brand} ${car.model} ${car.year}</h4>
+                    <div class="price">${formatPrice(car.price, currentCurrency)}</div>
+                    <div class="timer-badge">⏳ ${remaining.h}:${String(remaining.m).padStart(2,'0')}:${String(remaining.s).padStart(2,'0')}</div>
+                </div>
+            </div>`;
+            }).join('') || '<p style="padding:20px;color:#999;">لا توجد مزادات حالياً</p>';
+        }
+
+        function getAuctionRemaining(carId) {
+            if (!auctionTimers[carId]) {
+                const h = Math.floor(Math.random() * 12) + 1;
+                const m = Math.floor(Math.random() * 60);
+                const s = Math.floor(Math.random() * 60);
+                auctionTimers[carId] = { endTime: Date.now() + (h * 3600 + m * 60 + s) * 1000, h, m, s };
+                saveData();
+            }
+            const diff = Math.max(0, auctionTimers[carId].endTime - Date.now());
+            const totalSec = Math.floor(diff / 1000);
+            return { h: Math.floor(totalSec / 3600), m: Math.floor((totalSec % 3600) / 60), s: totalSec % 60, totalSec };
+        }
+
+        function renderAllAuctions() {
+            const container = document.getElementById('allAuctions');
+            const auctionCars = cars.filter(c => c.isAuction);
+            container.innerHTML = auctionCars.map(car => {
+                const imgSrc = getCarFirstImage(car);
+                const remaining = getAuctionRemaining(car.id);
+                return `
+            <div class="car-card-open" onclick="showAuctionDetail(${car.id})" style="margin:8px 14px;">
+              <div class="car-card-header">
+                <div class="car-image-container"><img src="${imgSrc}" onerror="this.onerror=null;this.src='data:image/svg+xml,...';"></div>
+                <div class="car-info-main">
+                  <div class="car-price-open">${formatPrice(car.price, currentCurrency)}</div>
+                  <div class="car-title-open">${car.brand} ${car.model} ${car.year}</div>
+                  <div class="car-specs-tags"><span>${car.trim}</span><span>📍${car.city}</span></div>
+                  <div class="timer-badge" style="margin-top:4px;">⏳ ${remaining.h}:${String(remaining.m).padStart(2,'0')}:${String(remaining.s).padStart(2,'0')}</div>
+                </div>
+              </div>
+            </div>`;
+            }).join('') || '<p style="text-align:center;color:#999;padding:20px;">لا توجد مزادات حالياً</p>';
+        }
+
+        function renderLatestCars() {
+            const container = document.getElementById('latestCarsContainer');
+            const sorted = [...cars].sort((a, b) => b.id - a.id).slice(0, 10);
+            container.innerHTML = sorted.map(renderCarCard).join('') ||
+                '<p style="text-align:center;color:#999;padding:20px;">لا توجد سيارات</p>';
+        }
+
+        function renderFeaturedCars() {
+            const container = document.getElementById('featuredCars');
+            const featured = cars.filter(c => c.featured).slice(0, 6);
+            container.innerHTML = featured.map(renderCarCard).join('') ||
+                '<p style="text-align:center;color:#999;padding:20px;">لا توجد سيارات مميزة</p>';
+        }
+
+        // ==================== صفحة تفاصيل المزاد ====================
+        function showAuctionDetail(id) {
+            const car = cars.find(c => c.id === id);
+            if (!car) return;
+            const remaining = getAuctionRemaining(car.id);
+            const isAuction = car.isAuction;
+            const content = document.getElementById('auctionDetailContent');
+            const imagesHtml = (car.images && car.images.length > 0) ?
+                car.images.map(img =>
+                    `<img src="${img}" style="width:100%;max-height:250px;object-fit:contain;border-radius:10px;background:#f0f0f3;" onerror="this.style.display='none';">`
+                    ).join('') :
+                '<p style="text-align:center;font-size:60px;">🚙</p>';
+            content.innerHTML = `
+            ${isAuction ? `
+            <div class="auction-detail-header">
+                <span class="auction-badge live" style="position:static;">🔥 مزاد مباشر</span>
+                <h2 style="margin-top:8px;">${car.brand} ${car.model} ${car.year}</h2>
+                <div class="auction-countdown">
+                    <div class="countdown-block"><span class="num" id="cd-h">${remaining.h}</span><span class="lbl">ساعة</span></div>
+                    <div class="countdown-block"><span class="num" id="cd-m">${String(remaining.m).padStart(2,'0')}</span><span class="lbl">دقيقة</span></div>
+                    <div class="countdown-block"><span class="num" id="cd-s">${String(remaining.s).padStart(2,'0')}</span><span class="lbl">ثانية</span></div>
+                </div>
+                <p style="font-size:12px;opacity:0.8;">ينتهي المزاد قريباً - سارع بالمزايدة!</p>
+            </div>
+            <div class="bid-section">
+                <p style="font-weight:700;margin-bottom:8px;">💰 السعر الحالي: <span style="color:#b71c1c;font-size:1.3rem;">${formatPrice(car.price, currentCurrency)}</span></p>
+                <div class="bid-input-row">
+                    <input type="number" id="bidAmount" placeholder="أدخل مبلغ المزايدة" min="${car.price+100}" value="${car.price+500}">
+                    <button class="btn-bid" onclick="placeBid(${car.id})">🔨 مزايدة</button>
+                </div>
+                <p style="font-size:10px;color:#999;margin-top:6px;">الحد الأدنى للمزايدة: ${formatPrice(car.price+100, currentCurrency)}</p>
+            </div>` : `
+            <div style="background:#fff;padding:16px;text-align:center;">
+                <h2>${car.brand} ${car.model} ${car.year}</h2>
+                <p style="font-size:1.5rem;font-weight:900;color:#b71c1c;">${formatPrice(car.price, currentCurrency)}</p>
+                <span style="background:#e8f5e9;color:#2e7d32;padding:4px 12px;border-radius:12px;font-size:11px;">بيع مباشر</span>
+            </div>`}
+            <div style="background:#fff;padding:8px;text-align:center;">${imagesHtml}</div>
+            <div class="specs-grid">
+                <div class="spec-row"><span>الحالة</span><strong>${car.condition==='new'?'جديد':'مستعمل'}</strong></div>
+                <div class="spec-row"><span>الماركة</span><strong>${car.brand}</strong></div>
+                <div class="spec-row"><span>الموديل</span><strong>${car.model}</strong></div>
+                <div class="spec-row"><span>سنة الصنع</span><strong>${car.year}</strong></div>
+                <div class="spec-row"><span>ناقل الحركة</span><strong>${car.transmission||'غير محدد'}</strong></div>
+                <div class="spec-row"><span>اللون</span><strong>${car.color}</strong></div>
+                <div class="spec-row"><span>المدينة</span><strong>📍 ${car.city}</strong></div>
+                <div class="spec-row"><span>نوع الإعلان</span><strong>${car.isAuction?'🔥 مزاد':'بيع مباشر'}</strong></div>
+            </div>
+            <div style="background:#fff;margin:8px 14px;padding:16px;border-radius:var(--radius);">
+                <h3>📝 الوصف</h3><p style="font-size:13px;color:#555;">${car.description||'لا يوجد وصف'}</p>
+            </div>
+            <div style="display:flex;gap:10px;padding:14px;">
+                <button class="btn-call-open" style="flex:1;" onclick="openWhatsApp('${car.brand} ${car.model} ${car.year}')">📞 واتساب</button>
+                <button class="btn-chat-open" style="flex:1;" onclick="openCarChat(${car.id},'${car.brand} ${car.model}')">💬 مراسلة</button>
+            </div>`;
+            navigateTo('details');
+            if (isAuction) startAuctionCountdown(car.id);
+        }
+
+        function placeBid(carId) {
+            if (!currentUser) { alert('⚠️ يجب تسجيل الدخول للمزايدة.');
+                openAuthModal(); return; }
+            const car = cars.find(c => c.id === carId);
+            if (!car) return;
+            const bidInput = document.getElementById('bidAmount');
+            const bidAmount = parseInt(bidInput.value);
+            if (!bidAmount || bidAmount <= car.price) return alert('⚠️ المبلغ يجب أن يكون أعلى من السعر الحالي');
+            car.price = bidAmount;
+            saveData();
+            addNotification('🔨 تمت المزايدة!', `تمت مزايدتك على ${car.brand} ${car.model} بمبلغ ${formatPrice(bidAmount, currentCurrency)}`,
+                '🔨');
+            showAuctionDetail(carId);
+        }
+
+        function startAuctionCountdown(carId) {
+            const interval = setInterval(() => {
+                const remaining = getAuctionRemaining(carId);
+                const hEl = document.getElementById('cd-h');
+                const mEl = document.getElementById('cd-m');
+                const sEl = document.getElementById('cd-s');
+                if (hEl) hEl.textContent = remaining.h;
+                if (mEl) mEl.textContent = String(remaining.m).padStart(2, '0');
+                if (sEl) sEl.textContent = String(remaining.s).padStart(2, '0');
+                if (remaining.totalSec <= 0) {
+                    clearInterval(interval);
+                    if (hEl) hEl.textContent = '0';
+                    if (mEl) mEl.textContent = '00';
+                    if (sEl) sEl.textContent = '00';
+                }
+            }, 1000);
+        }
+
+        // ==================== المفضلة ====================
+        function toggleFavorite(carId) {
+            const index = favorites.indexOf(carId);
+            if (index > -1) { favorites.splice(index, 1); } else { favorites.push(carId);
+                addNotification('❤️ تمت الإضافة للمفضلة', 'تمت إضافة السيارة إلى المفضلة.', '❤️'); }
+            saveData();
+            refreshAllViews();
+        }
+
+        function renderAccountFavorites() {
+            const container = document.getElementById('accountFavoritesList');
+            const favCars = cars.filter(c => favorites.includes(c.id));
+            if (favCars.length === 0) {
+                container.innerHTML =
+                    '<div class="favorites-empty"><span style="font-size:50px;">💔</span><p>لا توجد سيارات في المفضلة</p></div>';
+            } else {
+                container.innerHTML = favCars.map(renderCarCard).join('');
+            }
+        }
+
+        // ==================== المحادثات (مع صور) ====================
+        function openCarChat(carId, carTitle) {
+            if (!currentUser) { alert('⚠️ يجب تسجيل الدخول.');
+                openAuthModal(); return; }
+            const roomId = `chat_${carId}_${currentUser.phone.replace(/\D/g,'')}`;
+            if (!chatRooms[roomId]) { chatRooms[roomId] = { carId, carTitle, messages: [] };
+                saveData(); }
+            currentChatRoomId = roomId;
+            document.getElementById('chatPageTitle').textContent = `💬 ${carTitle}`;
+            renderChatPageMessages();
+            navigateTo('chat');
+        }
+
+        function renderChatPageMessages() {
+            const container = document.getElementById('chatPageMessages');
+            if (!currentChatRoomId || !chatRooms[currentChatRoomId]) { container.innerHTML = ''; return; }
+            const msgs = chatRooms[currentChatRoomId].messages;
+            container.innerHTML = msgs.map(m => `
+            <div style="margin:6px 0;text-align:${m.from==='user'?'left':'right'};">
+              <span style="display:inline-block;padding:8px 14px;border-radius:16px;max-width:80%;font-size:12px;background:${m.from==='user'?'#dcf8c6':'#fff'};border:1px solid #eee;">${m.text}<br><small style="color:#999;">${m.time}</small></span>
+            </div>`).join('') || '<p style="text-align:center;color:#999;">ابدأ المحادثة</p>';
+            container.scrollTop = container.scrollHeight;
+        }
+
+        function sendChatPageMessage() {
+            if (!currentChatRoomId) return;
+            const input = document.getElementById('chatPageInput');
+            const text = input.value.trim();
+            if (!text) return;
+            const room = chatRooms[currentChatRoomId];
+            room.messages.push({ from: 'user', text, time: new Date().toLocaleTimeString('ar-SA', { hour: '2-digit',
+                    minute: '2-digit' }) });
+            saveData();
+            renderChatPageMessages();
+            input.value = '';
+            setTimeout(() => {
+                room.messages.push({ from: 'support', text: 'شكراً لتواصلك! سيتم الرد عليك قريباً.',
+                    time: new Date().toLocaleTimeString('ar-SA', { hour: '2-digit', minute: '2-digit' }) });
+                saveData();
+                renderChatPageMessages();
+            }, 1500);
+        }
+
+        function renderMyChatsList() {
+            const container = document.getElementById('myChatsList');
+            const roomIds = Object.keys(chatRooms);
+            if (roomIds.length === 0) {
+                container.innerHTML =
+                    '<p style="text-align:center;color:#999;padding:40px;">💬 لا توجد محادثات بعد</p>';
+                return;
+            }
+            container.innerHTML = roomIds.map(rid => {
+                const room = chatRooms[rid];
+                const car = cars.find(c => c.id === room.carId);
+                const imgSrc = car ? getCarFirstImage(car) : '';
+                const lastMsg = room.messages.slice(-1)[0];
+                return `
+            <div class="chat-list-item" onclick="openExistingChat('${rid}')">
+              <div class="chat-thumb">${imgSrc?`<img src="${imgSrc}" onerror="this.innerHTML='🚗';this.style.fontSize='24px';this.style.display='flex';this.style.alignItems='center';this.style.justifyContent='center';">`:'🚗'}</div>
+              <div class="chat-info"><h4>${room.carTitle}</h4><p>${lastMsg?lastMsg.text:'ابدأ المحادثة...'}</p></div>
+              <span style="font-size:10px;color:#bbb;">${lastMsg?lastMsg.time:''}</span>
+            </div>`;
+            }).join('');
+        }
+
+        function openExistingChat(roomId) {
+            currentChatRoomId = roomId;
+            const room = chatRooms[roomId];
+            document.getElementById('chatPageTitle').textContent = `💬 ${room.carTitle}`;
+            renderChatPageMessages();
+            navigateTo('chat');
+        }
+
+        // ==================== الإشعارات ====================
+        function renderNotifications() {
+            const container = document.getElementById('notificationsList');
+            container.innerHTML = notifications.map(n => `
+            <div class="notification-item" style="background:#fff;margin:8px 14px;padding:14px;border-radius:var(--radius);border-right:4px solid var(--primary-red);cursor:pointer;display:flex;gap:12px;align-items:flex-start;" onclick="markNotifRead(${n.id})">
+              <span style="font-size:24px;">${n.icon}</span>
+              <div><h4>${n.title}</h4><p style="font-size:12px;">${n.body}</p><span style="font-size:10px;color:#999;">${n.time}</span></div>
+            </div>`).join('') || '<p style="text-align:center;color:#999;padding:20px;">لا توجد إشعارات</p>';
+            updateNotifBadge();
+        }
+
+        function updateNotifBadge() {
+            const badge = document.getElementById('notifBadge');
+            const unread = notifications.filter(n => n.unread).length;
+            if (badge) badge.style.display = unread > 0 ? 'block' : 'none';
+        }
+
+        function markNotifRead(id) {
+            const n = notifications.find(x => x.id === id);
+            if (n) { n.unread = false;
+                saveData();
+                renderNotifications(); }
+        }
+
+        function addNotification(title, body, icon = '📢') {
+            notifications.unshift({ id: Date.now(), title, body, time: 'الآن', unread: true, icon });
+            if (notifications.length > 20) notifications = notifications.slice(0, 20);
+            saveData();
+            renderNotifications();
+        }
+
+        // ==================== واتساب ====================
+        function openWhatsApp(carName) {
+            const phone = '967780173896';
+            const message = encodeURIComponent(`السلام عليكم، أريد الاستفسار عن: ${carName}`);
+            window.open(`https://wa.me/${phone}?text=${message}`, '_blank');
+        }
+
+        // ==================== إضافة إعلان ====================
+        function checkFileCount(input) { if (input.files.length > 7) { alert('الحد الأقصى 7 صور');
+                input.value = ''; } }
+
+        function submitAd() {
+            if (!currentUser) { alert('⚠️ يجب تسجيل الدخول.');
+                openAuthModal(); return; }
+            const brand = document.getElementById('adBrand').value;
+            const model = document.getElementById('adModel').value.trim();
+            const trim = document.getElementById('adTrim').value.trim();
+            const year = document.getElementById('adYear').value;
+            const color = document.getElementById('adColor').value.trim();
+            const city = document.getElementById('adCity').value;
+            const price = parseInt(document.getElementById('adPrice').value) || 0;
+            const currency = document.getElementById('adCurrency').value;
+            const transmission = document.getElementById('adTransmission').value;
+            const description = document.getElementById('adDescription').value.trim();
+            const condition = document.getElementById('adCondition').value;
+            const isAuction = document.getElementById('adIsAuction').value === 'true';
+            if (!brand || !model || !trim || !year || !color || !city) return alert('⚠️ املأ جميع الحقول المطلوبة');
+
+            const newCar = {
+                id: Date.now(),
+                brand,
+                model,
+                year,
+                trim,
+                color,
+                city,
+                price,
+                images: [],
+                featured: false,
+                condition,
+                isAuction,
+                transmission,
+                description,
+                currency,
+                owner: currentUser.phone
+            };
+
+            const files = document.getElementById('adFiles').files;
+            const processImages = (callback) => {
+                if (files.length === 0) return callback();
+                let loaded = 0;
+                Array.from(files).forEach(file => {
+                    const reader = new FileReader();
+                    reader.onload = function(e) { newCar.images.push(e.target.result);
+                        loaded++; if (loaded === files.length) callback(); };
+                    reader.readAsDataURL(file);
+                });
+            };
+
+            const finalize = () => {
+                cars.unshift(newCar);
+                if (isAuction) {
+                    auctionTimers[newCar.id] = { endTime: Date.now() + 24 * 3600 * 1000, h: 24, m: 0, s: 0 };
+                }
+                saveData();
+                addNotification('✅ تم إضافة إعلانك', `سيارة ${brand} ${model} ${year} تمت إضافتها بنجاح`, '✅');
+                navigateTo('home');
+                refreshAllViews();
+            };
+            processImages(finalize);
+        }
+
+        // ==================== البحث ====================
+        function applyQuickSearch() {
+            const brand = document.getElementById('quickBrand').value;
+            const city = document.getElementById('quickCity').value;
+            let results = cars;
+            if (brand) results = results.filter(c => c.brand === brand);
+            if (city) results = results.filter(c => c.city === city);
+            document.getElementById('latestCarsContainer').innerHTML = results.map(renderCarCard).join('') ||
+                '<p style="text-align:center;color:#999;">لا توجد نتائج</p>';
+        }
+
+        function applySearch() {
+            const text = document.getElementById('searchText').value.trim().toLowerCase();
+            const brand = document.getElementById('searchBrand').value;
+            const city = document.getElementById('searchCity').value;
+            const year = document.getElementById('searchYear').value;
+            const priceRange = document.getElementById('searchPrice').value;
+            const activeFilter = document.querySelector('#filterChips .filter-chip.active')?.getAttribute(
+                'data-filter') || 'all';
+            let results = cars;
+            if (text) results = results.filter(c => (c.brand + ' ' + c.model + ' ' + c.year + ' ' + c.trim).toLowerCase()
+                .includes(text));
+            if (brand) results = results.filter(c => c.brand === brand);
+            if (city) results = results.filter(c => c.city === city);
+            if (year) results = results.filter(c => c.year === year);
+            if (priceRange) { const [min, max] = priceRange.split('-').map(v => parseInt(v) || Infinity);
+                results = results.filter(c => c.price >= min && (max ? c.price <= max : true)); }
+            if (activeFilter === 'new') results = results.filter(c => c.condition === 'new');
+            if (activeFilter === 'used') results = results.filter(c => c.condition === 'used');
+            if (activeFilter === 'auction') results = results.filter(c => c.isAuction === true);
+            document.getElementById('searchResults').innerHTML = results.map(renderCarCard).join('') ||
+                '<p style="text-align:center;color:#999;padding:20px;">🔎 لا توجد نتائج</p>';
+        }
+
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('filter-chip')) {
+                e.target.parentElement.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+                e.target.classList.add('active');
+            }
+        });
+
+        // ==================== التوثيق ====================
+        function openAuthModal() { document.getElementById('authModal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+            updateAuthUI(); }
+
+        function closeAuthModal() { document.getElementById('authModal').classList.remove('show');
+            document.body.style.overflow = ''; }
+
+        function updateAuthUI() {
+            const form = document.getElementById('authForm');
+            const loggedIn = document.getElementById('authLoggedIn');
+            const title = document.getElementById('authTitle');
+            if (currentUser) { form.style.display = 'none';
+                loggedIn.style.display = 'block';
+                title.textContent = '👤 حسابي';
+                document.getElementById('authUserName').textContent =
+                `مرحباً ${currentUser.name} | ${currentUser.phone}`; } else { form.style.display = 'block';
+                loggedIn.style.display = 'none';
+                title.textContent = '🔐 تسجيل الدخول / إنشاء حساب'; }
+        }
+
+        function handleAuth() {
+            const name = document.getElementById('authName').value.trim();
+            const phone = document.getElementById('authPhone').value.trim();
+            const email = document.getElementById('authEmail').value.trim();
+            const password = document.getElementById('authPassword').value.trim();
+            if (!phone || !password) return alert('⚠️ رقم الهاتف وكلمة المرور مطلوبان.');
+            if (!validateYemeniPhone(phone)) return alert('⚠️ رقم هاتف يمني غير صالح.');
+            const existingUsers = JSON.parse(localStorage.getItem('haraj_users') || '[]');
+            const existing = existingUsers.find(u => u.phone === phone && u.password === password);
+            if (existing) { currentUser = existing; } else { currentUser = { name: name || 'مستخدم', phone, email,
+                    password, registeredAt: new Date().toISOString() };
+                existingUsers.push(currentUser);
+                localStorage.setItem('haraj_users', JSON.stringify(existingUsers));
+                addNotification('👋 أهلاً بك!', `تم إنشاء حسابك بنجاح ${currentUser.name}`, '👤'); }
+            localStorage.setItem('haraj_user', JSON.stringify(currentUser));
+            saveData();
+            updateAuthUI();
+            renderAccountPage();
+            alert(`✅ ${existing?'تم تسجيل دخولك':'تم إنشاء حسابك'} بنجاح!`);
+        }
+
+        function logout() { currentUser = null;
+            localStorage.removeItem('haraj_user');
+            updateAuthUI();
+            renderAccountPage();
+            alert('تم تسجيل الخروج.'); }
+
+        // ==================== صفحة الحساب ====================
+        function renderAccountPage() {
+            const container = document.getElementById('accountContent');
+            if (currentUser) {
+                container.innerHTML = `
+            <div class="account-header"><div class="account-avatar">👤</div><div style="font-size:20px;font-weight:700;">${currentUser.name}</div><div style="font-size:13px;opacity:0.9;">${currentUser.phone} | ${currentUser.email||''}</div></div>
+            <div class="menu-item" onclick="openAuthModal()"><span>👤</span> تعديل الحساب <span style="margin-right:auto;">←</span></div>
+            <div class="menu-item" onclick="navigateTo('messages')"><span>💬</span> رسائلي <span style="margin-right:auto;">←</span></div>
+            <div class="menu-item" style="color:#dc2626;" onclick="logout()"><span>🚪</span> تسجيل الخروج <span style="margin-right:auto;">←</span></div>`;
+            } else {
+                container.innerHTML = `
+            <div class="account-header"><div class="account-avatar">👤</div><div style="font-size:20px;font-weight:700;">زائر</div><div style="font-size:13px;opacity:0.9;">لم تقم بتسجيل الدخول</div></div>
+            <div class="menu-item" onclick="openAuthModal()"><span>🔐</span> تسجيل الدخول / إنشاء حساب <span style="margin-right:auto;">←</span></div>
+            <div class="menu-item" onclick="navigateTo('messages')"><span>💬</span> رسائلي <span style="margin-right:auto;">←</span></div>`;
+            }
+            renderAccountFavorites();
+        }
+
+        // ==================== التنقل ====================
+        function navigateTo(page) {
+            previousPage = document.querySelector('.page-section.active')?.id.replace('page-', '') || 'home';
+            document.querySelectorAll('.page-section').forEach(p => p.classList.remove('active'));
+            const target = document.getElementById('page-' + page);
+            if (target) target.classList.add('active');
+            document.querySelectorAll('.bottom-nav .nav-item').forEach(n => n.classList.remove('active'));
+            const navItem = document.querySelector(`.nav-item[data-page="${page}"]`);
+            if (navItem) navItem.classList.add('active');
+            const header = document.getElementById('mainHeader');
+            const backBtn = document.getElementById('backBtn');
+            const isSubPage = ['details', 'chat', 'add'].includes(page);
+            header.classList.toggle('subpage-header', isSubPage);
+            backBtn.style.display = isSubPage ? 'flex' : 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (page === 'home') { refreshAllViews(); if (!autoSlideInterval) startAutoSlide(); } else stopAutoSlide();
+            if (page === 'auctions') renderAllAuctions();
+            if (page === 'notifications') renderNotifications();
+            if (page === 'account') renderAccountPage();
+            if (page === 'messages') renderMyChatsList();
+            if (page === 'search') applySearch();
+        }
+
+        function goBack() { navigateTo(previousPage); }
+
+        function refreshAllViews() {
+            renderLatestCars();
+            renderFeaturedCars();
+            renderAuctionsScroll();
+            renderAccountFavorites();
+            renderMyChatsList();
+        }
+
+        // ==================== التهيئة ====================
+        function init() {
+            if (!localStorage.getItem('haraj_cars_v3')) saveData();
+            populateSelects();
+            buildSlider();
+            startAutoSlide();
+            refreshAllViews();
+            renderNotifications();
+            renderAccountPage();
+            renderAllAuctions();
+            updateNotifBadge();
+
+            // إضافة محدد العملة في الرئيسية
+            const currencySelector = document.createElement('div');
+            currencySelector.className = 'currency-selector';
+            currencySelector.id = 'currencySelector';
+            currencySelector.innerHTML = `
+            <span style="font-size:11px;color:#888;margin-left:4px;">العملة:</span>
+            <button class="currency-btn${currentCurrency==='USD'?' active':''}" data-curr="USD">$ دولار</button>
+            <button class="currency-btn${currentCurrency==='YER'?' active':''}" data-curr="YER">﷼ يمني</button>
+            <button class="currency-btn${currentCurrency==='SAR'?' active':''}" data-curr="SAR">ر.س سعودي</button>`;
+            const searchSection = document.querySelector('#page-home .search-section');
+            if (searchSection) searchSection.appendChild(currencySelector);
+
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('currency-btn')) {
+                    currentCurrency = e.target.getAttribute('data-curr');
+                    document.querySelectorAll('.currency-btn').forEach(b => b.classList.toggle('active',
+                        b === e.target));
+                    saveData();
+                    refreshAllViews();
+                    if (document.getElementById('page-details').classList.contains('active')) {
+                        const carId = parseInt(document.getElementById('auctionDetailContent')?.querySelector(
+                            '.bid-section')?.getAttribute('data-carid'));
+                        if (carId) showAuctionDetail(carId);
+                    }
+                }
+            });
+
+            // إغلاق المودالات
+            document.getElementById('authModal').addEventListener('click', function(e) { if (e.target === this)
+                    closeAuthModal(); });
+        }
+
+        document.addEventListener('DOMContentLoaded', init);
+
+        console.log('✅ حراج الشعب اليمني - الإصدار المطور الشامل');
+        console.log('🚀 الميزات: مزادات، تعدد عملات، مفضلة داخل الحساب، صور في الرسائل، حتى 7 صور للإعلان');
+    </script>
+</body>
+</html>
